@@ -46,3 +46,26 @@ print('  Bagels        None of the digits are correct')
 print('  Pico          One digit is correct but in the wrong position.')
 print('  Fermi         One digit is correct and in the right position.')
 
+while True:
+    secretNum = getSecretNum()
+    print(f"I have thought of a number. You have {MAX_GUESS} guesses to get it.")
+
+    guessesTaken = 1
+    while guessesTaken <= MAX_GUESS:
+        guess = ''
+        while len(guess) != NUM_DIGITSor not isOnlyDigits(guess):
+            print(f"Guess #{guessesTaken}: ")
+            guess = input()
+
+        print(getClues(guess, secretNum))
+        guessesTaken += 1
+
+        if guess == secretNum:
+            break
+        if guessesTaken > MAX_GUESS:
+            print(f"You ran out of guesses. The answer was {secretNum}.")
+        
+    print("Do you want to play again? (yes or no)")
+    if not input().lower().startswith('y'):
+        break
+        
