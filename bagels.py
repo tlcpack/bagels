@@ -16,7 +16,7 @@ def getClues(guess, secretNum):
     if guess == secretNum:
         return 'You got it!'
 
-    clues[]
+    clues = []
     for i in range(len(guess)):
         if guess[i] == secretNum[i]:
             clues.append('Fermi')
@@ -53,7 +53,7 @@ while True:
     guessesTaken = 1
     while guessesTaken <= MAX_GUESS:
         guess = ''
-        while len(guess) != NUM_DIGITSor not isOnlyDigits(guess):
+        while len(guess) != NUM_DIGITS or not isOnlyDigits(guess):
             print(f"Guess #{guessesTaken}: ")
             guess = input()
 
@@ -68,4 +68,3 @@ while True:
     print("Do you want to play again? (yes or no)")
     if not input().lower().startswith('y'):
         break
-        
