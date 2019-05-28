@@ -1,4 +1,5 @@
 import random
+import time
 
 NUM_DIGITS = 3
 MAX_GUESS = 10
@@ -35,4 +36,13 @@ def isOnlyDigits(num):
             return False
     
     return True
+
+print(f"I am thinking of a {NUM_DIGITS}-digit number. Try and guess what it is.")
+time.sleep(2)
+print("The clues I give are...")
+time.sleep(2)
+print("When I say:     That means:")
+print('  Bagels        None of the digits are correct')
+print('  Pico          One digit is correct but in the wrong position.')
+print('  Fermi         One digit is correct and in the right position.')
 
